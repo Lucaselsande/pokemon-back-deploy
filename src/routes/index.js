@@ -17,7 +17,7 @@ router.get("/types", getAllTypes);
 
 //tenia un problema para acceder desde el cliente al server en estas rutas especificas, con esto lo solucione
 router.options("/delete/:id", (req, res) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.sendStatus(200);
@@ -25,7 +25,7 @@ router.options("/delete/:id", (req, res) => {
 router.delete("/delete/:id", deletePokemon);
 
 router.options("/pokemon", (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.sendStatus(200);
